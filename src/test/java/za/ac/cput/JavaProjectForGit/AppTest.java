@@ -1,9 +1,9 @@
 package za.ac.cput.JavaProjectForGit;
 
-/**
- * @author Bheka Gumede 217180833
+/*
+  @author Bheka Gumede 217180833
  * This program check integers
- *
+
  */
 
 
@@ -27,7 +27,10 @@ public class AppTest {
     void setUp() {
 
     }
-
+    @Test
+    void testTimeouts() {
+        assertTimeout(Duration.ofMillis(20), () -> Thread.sleep(1000));
+    }
     @Test
     void testIdentity() {
         assertSame(a, b);
@@ -46,10 +49,7 @@ public class AppTest {
 
     }
 
-    @Test
-    void testTimeouts() {
-        assertTimeout(Duration.ofMillis(20), () -> { Thread.sleep(1000); });
-    }
+
     @Disabled
     @Test
     void disableTest(){
